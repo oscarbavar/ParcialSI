@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div id="divdav" class="container">
+        <a class="navbar-brand" href="/">VACA-NERIA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse lupe" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Inicio</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="{% url 'descripcion' %}" class="nav-link">Mis vacas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'crear' %}" class="nav-link">Agregar ganado</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'cerrarsesion' %}" class="nav-link">Cerrar Sesión </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link enabled" tabindex="-1" aria-disabled="false">| {{ user.username }} </a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a href="{% url 'iniciarsesion' %}" class="nav-link">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'registro' %}" class="nav-link">Registrarse</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-center caja">
+        <div class="container text-center border form-container caja">
+            <h1>Inicia Sesion</h1>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Iniciar Sesión</button>
+          </form>
+          {% if error %}
+              <p style="color: red; font-size: large;">{{ error }}</p>
+          {% endif %}
+      </body>
+        </div>
+</div>
+{% endblock %}

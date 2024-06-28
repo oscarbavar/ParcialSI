@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VACA-NERIA</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        background-color: rgb(35, 210, 35);
+      }
+  
+      div{
+        display: inline-block;
+        background-color: rgba(56, 213, 129, 0.778);
+        border-radius: 10px;
+      }
+        
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .caja{
+        margin: 20px;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      form {
+        background-color: rgba(30, 140, 54, 0.8);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: slideInLeft 1s ease;
+      }
+
+      form button {
+        margin-top: 35px;
+        padding: 10px 20px;
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+      }
+
+      form button:hover {
+        background-color: rgb(72, 132, 228);
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+
+        to{
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .alto2 {
+        height: 200px; /* Ajustar según necesidad */
+      }
+/* Estilos específicos para la sección de productos */
+      .col-10 {
+        background-color: #4481d6;
+        padding: 10px;
+      }
+
+      .col-10 h1 {
+        color: black;
+      }
+
+      .col-10 ul {
+        list-style-type: none;
+      }
+/*
+      .col-10 li {
+        background-color: #d6e4ff;
+        padding: 10px;
+      }
+*/
+      div{
+        display: inline-block;
+      }
+
+      .centrar {
+        margin: 5%;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        background-color: rgb(85, 194, 98);
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: rgb(62, 242, 242);
+      }
+
+      .imagen{
+        height: 350px;
+        width: 260px;
+      }
+
+      #divdav{
+        background-color: rgba(213, 18, 28, 0);
+      }
+
+      .lupe{
+        background-color: rgba(240, 248, 255, 0);
+      }
+
+      h1 {
+        color: #c4d8ff;
+      }
+      
+      .form-container form {
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+      }
+
+      .form-container label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333333;
+      }
+/*
+      .form-container input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+*/
+      .form-container button {
+        padding: 10px;
+        background-color: rgba(92, 163, 35, 0.707);
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .form-container button:hover {
+        background-color: rgb(17, 80, 238);
+      }
+
+      .form-container p {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #666666;
+      }
+
+      .form-container p a {
+        color: rgb(46, 66, 180);
+        text-decoration: none;
+      }
+
+      .form-container p a:hover {
+        text-decoration: underline;
+      }
+
+      .caja{
+        padding: 2%;
+      }
+
+      nav{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        background-color: rgba(105, 105, 105, 0.473);
+        margin: 2%;
+      }
+
+      .nav-link{
+        font-family: serif;
+      }
+
+      .contenedor2 {
+        display: inline-block;
+      }
+
+      span.helptext#id_username_helptext {
+        display: none;
+      }
+
+      span.helptext#id_password2_helptext {
+        display: none;
+      }
+      
+      ul {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'navegacion.html' %}
+    
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

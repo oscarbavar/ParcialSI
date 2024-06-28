@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    #tit {
+        font-family: fantasy;
+        color: black;
+    }
+    .titulopagina {
+        color: rgb(215, 68, 68);
+        margin: 3%;
+    }
+    .imagen {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<div class="d-flex justify-content-center caja">
+  <div class="container text-center caja login-container">
+    <h1 id="tit" class="display-4 mb-4">Bienvenid@ {{ user.username }} a tu mejor página acerca de la raza bovina "vaca-nería"</h1>
+    <hr>
+    <div class="row mt-4">
+      <h2 class="titulopagina">Pagina principal</h2>
+      {% for product in descripcion %}
+      <div class="col-md-4 mb-4">
+        <div class="card contenedor2">
+          <div class="card-body">
+            <img src="{{ product.imagen.url }}" class="card-img-top imagen" alt="{{ product.Titulo }}">
+            <h5 class="card-title">{{ product.Titulo }}</h5>
+            <p class="card-text">{{ product.descripcion }}</p>
+            <a href="{% url 'detalle' product.id %}" class="btn btn-primary">Estoy interesad@</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

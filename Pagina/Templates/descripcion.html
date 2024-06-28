@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center mb-4">Tu ganado acá</h1>
+      {% if products %}
+        <ul class="list-group">
+          {% for producto in products %}  
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="{{ producto.image.url }}" alt="{{ producto.title }}" class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                  <h4>{{ producto.Titulo }}</h4> 
+                  <p>{{ producto.descripcion }}</p>
+                  <p>Precio: ${{ producto.precio }}</p>
+                  <a href="{% url 'detalle' producto.id %}" class="btn btn-primary">Ver detalle</a>
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No tienes ganado añadido todavía.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

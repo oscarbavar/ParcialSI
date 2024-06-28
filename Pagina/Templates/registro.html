@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="d-flex justify-content-center caja"> 
+    <div class="container form-container caja">
+        <h1>Registrate aqui</h1>
+        <form action="/registro/" method="POST">
+          {% csrf_token %} {{form.as_p}}
+          <button class="btn btn-primary">Registrar</button>
+        </form>
+        {% if error %}
+              <p style="
+              color: rgb(255, 0, 0);
+              text-align: center;
+              text-transform: uppercase;"
+              >{{ error }}</p>
+          {% endif %}
+      </div>
+</div>
+
+{% endblock %}
